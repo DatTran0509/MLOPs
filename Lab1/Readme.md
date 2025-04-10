@@ -41,3 +41,45 @@ Due to the dataset and logs being **large in size**, they are not hosted directl
 
 
 
+## 🔄 Pipeline Overview
+
+
+### 1. **Data Loading and Preprocessing**
+
+- The dataset is loaded, and images are resized to a fixed size.
+- Labels are encoded using `LabelEncoder` to convert class labels into numeric form.
+- The data is split into training and testing sets using `train_test_split` from `scikit-learn` to ensure proper training and validation of the model.
+
+### 2. **Model Building**
+
+- A custom **Convolutional Neural Network (CNN)** is built using Keras. 
+- The model architecture includes several convolutional and dense layers, followed by dropout for regularization and ReLU activations.
+
+### 3. **Hyperparameter Tuning with Optuna**
+
+- The pipeline integrates **Optuna**, a hyperparameter optimization framework, which is used to tune the following hyperparameters:
+  - Learning rate
+  - Batch size
+  - Epochs
+- Optuna performs an efficient search for the best hyperparameters, helping improve model performance by finding optimal settings.
+
+### 4. **Model Training**
+
+- The model is trained using the preprocessed dataset. 
+- **Early stopping** is applied during training to monitor validation loss. If there's no improvement for 3 consecutive epochs, the training process is halted to avoid overfitting.
+
+### 5. **Experiment Tracking with MLflow**
+
+- All training parameters (such as learning rate, batch size, and epochs) and metrics (including accuracy, precision, recall, F1-score) are logged using **MLflow**.
+- This allows easy comparison of multiple runs, hyperparameter combinations, and provides a detailed history of model performance.
+
+### 6. **Model Evaluation**
+
+- After training, the best model is evaluated on the test set.
+- Key metrics such as accuracy, precision, recall, and F1-score are computed and printed.
+- A **confusion matrix** is also generated and saved for better understanding of the model’s performance across different classes.
+
+### 7. **Visualization**
+
+- During training, both the **loss** and **accuracy** curves are saved for visualization. This helps in understanding the model's performance and learning curve.
+- Additionally, confusion matrices are plotted for visual interpretation of how well the model is classifying different categories.
