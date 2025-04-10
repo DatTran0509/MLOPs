@@ -8,9 +8,9 @@ This project focuses on image classification using a Convolutional Neural Networ
 
 Due to the dataset and logs being **large in size**, they are not hosted directly on this repo.
 
-🔗 **You can view and download the full MLflow tracking logs and outputs from My Kaggle:**  
+🔗 **You can view and download the full MLflow tracking logs and outputs from My Kaggle:**  [🔗 View on Kaggle →](https://www.kaggle.com/code/dattran0509/cs317-lab1#MLflow-Training-Pipeline-on-Kaggle-for-Animal-Classification-using-Custom-CNN-(Keras)-with-Optuna)
+
 🔗 **ALL INFORMATION ABOUT TRACKING IN Output/mlruns**
-[🔗 View on Kaggle →](https://www.kaggle.com/code/dattran0509/cs317-lab1#MLflow-Training-Pipeline-on-Kaggle-for-Animal-Classification-using-Custom-CNN-(Keras)-with-Optuna)
 
 [🔗 View on Github →](https://github.com/DatTran0509/MLOPs/tree/main/Lab1)
 
