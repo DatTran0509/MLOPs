@@ -1,4 +1,4 @@
-# 🧠 Image Classification with Hyperparameter Tuning and MLflow Tracking
+# Image Classification with Hyperparameter Tuning and MLflow Tracking
 
 This project focuses on image classification using a Convolutional Neural Network (CNN) built with TensorFlow/Keras. It includes **automated hyperparameter tuning with Optuna** and **training experiment tracking using MLflow**.
 
