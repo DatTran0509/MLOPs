@@ -12,6 +12,7 @@ Due to the dataset and logs being **large in size**, they are not hosted directl
 🔗 **ALL INFORMATION ABOUT TRACKING IN Output/mlruns**
 [🔗 View on Kaggle →](https://www.kaggle.com/code/dattran0509/cs317-lab1#MLflow-Training-Pipeline-on-Kaggle-for-Animal-Classification-using-Custom-CNN-(Keras)-with-Optuna)
 
+[🔗 View on Github →](https://github.com/DatTran0509/MLOPs/tree/main/Lab1)
 
 ## 📌 Project Features
 
