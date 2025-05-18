@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 
 app = FastAPI()
 
-model = load_model("./model.keras")
+model = load_model("./models/model.keras")
 label_map = {0:"cat", 1:"dog", 2:"panda", 3:"snake"}
 
 templates = Jinja2Templates(directory="templates")

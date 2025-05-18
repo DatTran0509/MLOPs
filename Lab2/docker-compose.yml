@@ -4,7 +4,8 @@ services:
   fastapi-app:
     build:
       context: .
-      dockerfile: Dockerfile   
+      dockerfile: Dockerfile
+    image: dattran2004/lab2_mlops:latest
     ports:
       - "8000:8000"
     restart: unless-stopped
