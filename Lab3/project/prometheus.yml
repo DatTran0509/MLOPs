@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # FastAPI application metrics
+  - job_name: 'fastapi-app'
+    static_configs:
+      - targets: ['fastapi-app:8000']
+    metrics_path: /metrics
+    scrape_interval: 5s
+
+  # Node Exporter cho system metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 5s
+
+  # NVIDIA GPU metrics (optional)
+  - job_name: 'nvidia-gpu-exporter'
+    static_configs:
+      - targets: ['nvidia-gpu-exporter:9835']
+    scrape_interval: 5s
+
+  # Alertmanager metrics
+  - job_name: 'alertmanager'
+    static_configs:
+      - targets: ['alertmanager:9093']
