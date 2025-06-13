@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+tensorflow
+pillow
+numpy
+prometheus-fastapi-instrumentator
+prometheus_client

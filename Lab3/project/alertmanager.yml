@@ -1,0 +1,39 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname', 'severity', 'instance']
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
+  receiver: 'log-alerts'
+  routes:
+    - match:
+        severity: critical
+      receiver: 'critical-log'
+    - match:
+        severity: warning
+      receiver: 'warning-log'
+
+receivers:
+  - name: 'log-alerts'
+    webhook_configs:
+      - url: 'http://webhook-logger:5001/alerts'
+        send_resolved: true
+
+  - name: 'critical-log'
+    webhook_configs:
+      - url: 'http://webhook-logger:5001/critical'
+        send_resolved: true
+
+  - name: 'warning-log'
+    webhook_configs:
+      - url: 'http://webhook-logger:5001/warning'
+        send_resolved: true
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
