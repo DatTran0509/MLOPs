@@ -13,7 +13,7 @@ This project focuses on image classification using a Convolutional Neural Networ
 ---
 
 
-## DEMO LAB2
+## DEMO LAB3
 [🔗 VIDEO DEMO →](https://drive.google.com/file/d/1WrXHEIFrORCimSjhhIZRO7D9iyzhxiO4/view?usp=sharing)
 
 # Kiến trúc 
